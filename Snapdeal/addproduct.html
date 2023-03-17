@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+<body>
+    <div id="addProducts">
+        <form onsubmit="add()">
+            <label >Product Name</label><br>
+            <input type="text" placeholder="Product Name" id="productName"><br>
+            <label > Product Image Url</label><br>
+            <input type="text" placeholder="url" id="productImage"><br>
+            <label >Price</label><br>
+            <input type="number" placeholder="Price" id="productPrice"><br><br>
+            <input type="submit" value="Add Products">
+        </form>
+    </div>
+
+    <script src="./server.js"></script>
+</body>
+</html>

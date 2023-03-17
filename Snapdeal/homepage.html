@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/d98822fee5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>SnapDeal</title>
+  </head>
+  <body>
+    <div>
+      <div class="navbar">
+        <div class="nav-top">
+          <div>
+            <div class="nav-top-l">
+              <p>Brand Waali Quality, Bazaar Waali Deal!</p>
+            </div>
+            <div class="nav-top-r">
+              <div><p>Impact@Snapdeal</p></div>
+              <div><p>Gift Cards</p></div>
+              <div><p>Help Center</p></div>
+              <div><p>Sell On Snapdeal</p></div>
+              <div>
+                <div>
+                  <img
+                    src="https://i4.sdlcdn.com/img/platinum09/downloadappicon2ndsep.png"
+                    alt="icon"
+                  />
+                </div>
+                <p>Download App</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-bot">
+          <div>
+            <div class="nav-l">
+              <div class="logo">
+                <img
+                  src="https://i3.sdlcdn.com/img/snapdeal/darwin/logo/sdLatestLogo.svg"
+                  alt="snapdeal"
+                />
+              </div>
+              <div class="searchbar">
+                <input type="search" placeholder="Search Products & Brands"/>
+                <div>
+                  <button> <i class="fa-solid fa-magnifying-glass"></i>
+                    Search</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-r">
+              <div >
+                <p>Cart</p>
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+
+              <div id="logout">
+                <p>Log in</p>
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <button onclick="logout()">Logout</button> -->
+    </div>
+    <script src="./server.js"></script>
+    <script>
+      window.onload=function(){
+        var dataFromLs =JSON.parse(localStorage.getItem("currentUser"));
+
+        if(dataFromLs){
+          var divFromHtml =document.getElementById("logout");
+          var showCode =`<p onclick="logout()">Log Out</p>`;
+          divFromHtml.innerHTML=showCode;
+          // window.location.href ='homepage.html';
+          alert("Logout");
+        }
+      }
+    </script>
+  </body>
+</html>

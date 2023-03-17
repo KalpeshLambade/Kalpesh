@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Cart</title>
+  </head>
+  <body>
+    <div>
+      <div id="showCart">
+        <div>
+          <div>
+            <img />
+          </div>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+
+      <button onclick="buy()">Buy</button>
+    </div>
+
+    <script src="./server.js"></script>
+    <script>
+      window.onload = function () {
+        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+        if (!currentUser) {
+          window.location.href="index.html";
+          alert("login to Add Products");
+        } else {
+          var divFromHtml = document.getElementById("showCart");
+          var dataFromLs = JSON.parse(localStorage.getItem("userData"));
+
+          var cartItems;
+          var showProducts = [];
+
+          var flag = false;
+
+          for (var i = 0; i < dataFromLs.length; i++) {
+            if (
+              dataFromLs[i].email === currentUser && dataFromLs[i].cartItems.length !=0
+            ) {
+              cartItems = dataFromLs[i].cartItems;
+              flag = true;
+            }
+          }
+
+          if (flag) {
+            for (var i = 0; i < cartItems.length; i++) {
+              showProducts += `<div><div><img src='${cartItems[i].image}'/></div> <p>${cartItems[i].name}</p> <p>${cartItems[i].price}</p></div>`;
+            }
+
+            divFromHtml.innerHTML = showProducts;
+          }
+          else{
+            window.location.href ="index.html";
+            alert("Add products to cart");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
