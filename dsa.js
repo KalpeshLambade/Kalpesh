@@ -1,6 +1,18 @@
 // Q 1
+// var array =[ 34,45,65,23,5,676,32,34];
+// var target =66;
 
-//Q2 
+// for(var i=0;i<array.length-1;i++){
+//     for(var j=i; j<array.length; j++){
+//         if(array[i] + array[j] === target){
+//             flag =true;
+//             console.log(array[i], array[j]);
+//         }
+//     }
+// }
+
+
+// Q2 
 // var start = 5768;
 // var end =78656;
 
@@ -28,7 +40,6 @@
 //         flag =true;
 //     }
 // }
-
 // if(flag){
 //     console.log(index);
 // }
