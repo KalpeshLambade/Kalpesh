@@ -11,13 +11,13 @@
   <body>
     <div>
       <div id="showCart">
-        <div>
+        <!-- <div>
           <div>
             <img />
           </div>
           <p></p>
           <p></p>
-        </div>
+        </div> -->
       </div>
 
       <button onclick="buy()">Buy</button>
@@ -31,7 +31,8 @@
         if (!currentUser) {
           window.location.href="index.html";
           alert("login to Add Products");
-        } else {
+        } 
+        else {
           var divFromHtml = document.getElementById("showCart");
           var dataFromLs = JSON.parse(localStorage.getItem("userData"));
 
