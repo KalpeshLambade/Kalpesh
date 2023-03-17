@@ -49,23 +49,24 @@
                 />
               </div>
               <div class="searchbar">
-                <input type="search" placeholder="Search Products & Brands"/>
+                <input type="search" placeholder="Search Products & Brands" />
                 <div>
-                  <button> <i class="fa-solid fa-magnifying-glass"></i>
-                    Search</button>
+                  <button>
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                  </button>
                 </div>
               </div>
             </div>
 
             <div class="nav-r">
-              <div >
+              <div>
                 <p>Cart</p>
                 <i class="fa-solid fa-cart-shopping"></i>
               </div>
 
               <div id="logout">
-                <p>Log in</p>
-                <i class="fa-solid fa-user"></i>
+                <p  onclick="window.location.href='login.html' ">Log in</p>
+                <i class="fa-solid fa-user" onclick="window.location.href='login.html' "></i>
               </div>
             </div>
           </div>
@@ -76,17 +77,19 @@
     </div>
     <script src="./server.js"></script>
     <script>
-      window.onload=function(){
-        var dataFromLs =JSON.parse(localStorage.getItem("currentUser"));
+      window.onload = function () {
+        var dataFromLs = JSON.parse(localStorage.getItem("currentUser"));
 
-        if(dataFromLs){
-          var divFromHtml =document.getElementById("logout");
-          var showCode =`<p onclick="logout()">Log Out</p>`;
-          divFromHtml.innerHTML=showCode;
-          // window.location.href ='homepage.html';
-          alert("Logout");
+        if (dataFromLs) {
+          var divFromHtml = document.getElementById("logout");
+          var showCode = `<p onclick="logout()">Log Out</p>`;
+          divFromHtml.innerHTML = showCode;
+
+
         }
-      }
+
+        
+      };
     </script>
   </body>
 </html>

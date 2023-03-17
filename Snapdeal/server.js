@@ -85,6 +85,9 @@ function login(event) {
 
 function logout() {
   localStorage.removeItem("currentUser");
+  window.location.href ='homepage.html';
+  alert("Logout");
+  
 }
 
 function add() {
